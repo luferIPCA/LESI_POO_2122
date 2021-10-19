@@ -37,6 +37,7 @@ namespace Aula3___Classes
             Console.WriteLine("Existem:" + Carro.tot.ToString());
 
             #region Garbage Collection
+
             //Forçar o Destructor
             c = null;
 
@@ -44,7 +45,7 @@ namespace Aula3___Classes
 
             ExampleClass ex = new ExampleClass();
             ex.ShowDuration();
-
+            ex = null;
             #endregion
 
             Console.ReadKey();

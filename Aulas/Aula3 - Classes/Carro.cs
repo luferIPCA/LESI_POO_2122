@@ -149,7 +149,7 @@ namespace Aula3___Classes
         public ExampleClass()
         {
             sw = Stopwatch.StartNew();
-            Console.WriteLine("Instantiated object");
+            //Console.WriteLine("Instantiated object");
             Thread.Sleep(1000);     //força delay de 1s
         }
 
@@ -159,6 +159,9 @@ namespace Aula3___Classes
                               this, sw.Elapsed);
         }
 
+        /// <summary>
+        /// Destructor
+        /// </summary>
         ~ExampleClass()
         {
             Console.WriteLine("Finalizing object");
@@ -166,6 +169,22 @@ namespace Aula3___Classes
             Console.WriteLine("This instance of {0} has been in existence for {1}",
                               this, sw.Elapsed);
         }
+
+        #region Override
+        public override bool Equals(object obj)
+        {
+            return this.sw==((ExampleClass)obj).sw;
+        }
+        #endregion
+
+        #region Operadores
+        public static bool operator ==(ExampleClass a, ExampleClass b) {
+            return false;
+        }
+        public static bool operator !=(ExampleClass a, ExampleClass b) {
+            return true;
+        }
+        #endregion
     }
 
 }
