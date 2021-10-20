@@ -22,10 +22,8 @@ namespace Aula3___Classes
     public class Carro
     {
 
-
         #region Attributes
         public static int tot;
-
         int ano;
         string matricula;
         #endregion      //Estado
@@ -136,6 +134,7 @@ namespace Aula3___Classes
         #endregion
 
         #endregion      //Comport
+
     }
 
     /// <summary>

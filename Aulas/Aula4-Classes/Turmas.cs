@@ -17,10 +17,10 @@ namespace Aula4_Classes
     /// </summary>
     /// <remarks></remarks>
     /// <example></example>
-    public class Turmas
+    public class Ipca
     {
         #region Attributes
-        static Turma[] ipca;       //único - Singleton!!!
+        static Turma[] turmas;       //único - Singleton!!!
         static int totTurmas;
         #endregion
 
@@ -31,10 +31,18 @@ namespace Aula4_Classes
         /// <summary>
         /// The default Constructor static.
         /// </summary>
-        static Turmas()
+        static Ipca()
         {
-            ipca = new Turma[40];
+            turmas = new Turma[40];
             totTurmas = 0;
+        }
+
+        /// <summary>
+        /// Construtor de Classe - criar objetos
+        /// </summary>
+        public Ipca()
+        {
+
         }
 
         #endregion
@@ -42,9 +50,13 @@ namespace Aula4_Classes
         #region Properties
         #endregion
 
-
-
         #region Overrides
+
+        //public override string ToString()
+        //{
+
+        //    return base.ToString();
+        //}
         #endregion
 
         #region OtherMethods
@@ -53,10 +65,10 @@ namespace Aula4_Classes
         {
             for(int i=0; i < totTurmas; i++)
             {
-                if(ipca[i].numTurma==codTurma)
+                if(turmas[i].numTurma==codTurma)
                 {
                     //QUem procura dentro da turma é método da classe Turma
-                    return ipca[i].ExisteAluno(nomeAluno);
+                    return turmas[i].ExisteAluno(nomeAluno);
                 }
             }
             return false;
@@ -67,7 +79,7 @@ namespace Aula4_Classes
         /// <summary>
         /// The destructor.
         /// </summary>
-        ~Turmas()
+        ~Ipca()
         {
         }
         #endregion

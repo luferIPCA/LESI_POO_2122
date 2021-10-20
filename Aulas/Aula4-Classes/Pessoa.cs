@@ -20,10 +20,10 @@ namespace Aula4_Classes
     public class Pessoa
     {
         #region Attributes
-        public int idade;
+        public int idade;           //atenção: retirar public
         string nome;
 
-        static int totObjetos;      //atributo de class
+        static int totObjetos;      //atributo de class: conta o número de objetos do tipo Pessoa
         #endregion
 
         #region Methods
@@ -44,7 +44,7 @@ namespace Aula4_Classes
         {
             this.nome = nome;
             this.idade = idade;
-            totObjetos++;
+            totObjetos++;           //incremento o número de pessoas
         }
 
         #endregion
@@ -63,12 +63,45 @@ namespace Aula4_Classes
 
         #endregion
 
-
-
         #region Overrides
+
+        public override string ToString()
+        {
+            return $"Pessoa: {nome} - Idade: {idade}";
+        }
+
+        /// <summary>
+        /// Compara dois objetos
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {         
+            Pessoa t = obj as Pessoa;
+            //Pessoa t = (Pessoa)obj;
+            if (t.nome == this.nome && t.idade == this.idade)
+                return true;
+            return false;
+
+        }
+
         #endregion
 
         #region OtherMethods
+
+        #region Operators
+        public static bool operator ==(Pessoa p1, Pessoa p2)
+        {
+            return (p1.Equals(p2));
+        }
+
+        public static bool operator !=(Pessoa p1, Pessoa p2)
+        {
+            return (!(p1 == p2));
+        }
+
+        #endregion
+
         #endregion
 
         #region Destructor

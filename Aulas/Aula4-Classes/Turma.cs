@@ -80,6 +80,13 @@ namespace Aula4_Classes
         #endregion
 
         #region Overrides
+
+        public override string ToString()
+        {
+            return ("Turma: " + numTurma + " Alunos: " + totAlunos);
+        }
+
+
         #endregion
 
         #region OtherMethods
@@ -92,6 +99,13 @@ namespace Aula4_Classes
                     return true;
             }
             return false;
+        }
+
+        public bool InsereAluno(Pessoa p)
+        {
+            //regras
+            alunos[totAlunos++] = p;
+            return true;
         }
 
         
