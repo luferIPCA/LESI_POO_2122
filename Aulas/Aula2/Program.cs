@@ -71,6 +71,9 @@ namespace Aula2
             int[] v1 = new int[] { 2, 3, 4, 5 };
             int[] v2 = { 11, 2, -3, 4, -5 };
 
+
+           
+
             for(int i=0; i<v2.Length; i++)
             {
                 Console.WriteLine(v2[i].ToString());

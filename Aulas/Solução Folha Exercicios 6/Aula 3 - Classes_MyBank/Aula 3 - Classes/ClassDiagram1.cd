@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aula_3___Classes.Gestao">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Gestao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes.BankAccount">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAADCAgAAAwAAAAEgAAAAIAAAAAQAAAAQAAAAAAAA=</HashCode>
+      <FileName>MyBank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes.Transaction">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAACAAAAAgAABAAAAAQAAIAA=</HashCode>
+      <FileName>MyBank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes.Transacoes">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAgAAAABAAACAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyBank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aula_3___Classes.Pessoa">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAEAABABABAEAQAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Pesssoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aula_3___Classes.WeekDay">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAkAAAAIgAAAAAEAACAIQAAAAQAAAAAAABBAAAAAAA=</HashCode>
+      <FileName>WeekDay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Classes.Tipo">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyBank.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
