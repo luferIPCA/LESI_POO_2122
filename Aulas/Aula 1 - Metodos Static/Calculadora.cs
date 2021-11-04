@@ -34,6 +34,8 @@ namespace Aula1
 
             int r = Calculo.Soma(2, 3);
             Console.WriteLine("Soma = {0}", r);
+
+            Console.ReadKey();
         }
     }
 }

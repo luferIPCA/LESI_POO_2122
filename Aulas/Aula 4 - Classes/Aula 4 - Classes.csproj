@@ -7,7 +7,7 @@
     <ProjectGuid>{E36D6A83-ECE6-4893-9C77-D8FF19DC7CC2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Aula4_Classes</RootNamespace>
-    <AssemblyName>Aula4-Classes</AssemblyName>
+    <AssemblyName>Aula 4 - Classes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

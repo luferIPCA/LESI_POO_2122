@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula1 - Static", "Aula1\Aula1 - Static.csproj", "{FA3E7EE4-E7FD-4FD5-AA23-7BA0E1ADD671}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula 1 - Metodos Static", "Aula 1 - Metodos Static\Aula 1 - Metodos Static.csproj", "{FA3E7EE4-E7FD-4FD5-AA23-7BA0E1ADD671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula2 - Arrays", "Aula2\Aula2 - Arrays.csproj", "{73485008-1D54-4D38-BB32-996460C4839D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula 2 - Arrays e Structs", "Aula 2 - Structs\Aula 2 - Arrays e Structs.csproj", "{73485008-1D54-4D38-BB32-996460C4839D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula3 - Classes", "Aula3 - Classes\Aula3 - Classes.csproj", "{945977A7-7FCF-4222-B0D4-D6F19B0CCFBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula 3 - Classes", "Aula 3 - Classes\Aula 3 - Classes.csproj", "{945977A7-7FCF-4222-B0D4-D6F19B0CCFBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula4-Classes", "Aula4-Classes\Aula4-Classes.csproj", "{E36D6A83-ECE6-4893-9C77-D8FF19DC7CC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula 4 - Classes", "Aula 4 - Classes\Aula 4 - Classes.csproj", "{E36D6A83-ECE6-4893-9C77-D8FF19DC7CC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteDLL", "TesteDLL\TesteDLL.csproj", "{DFE8CF8E-22ED-4303-A90C-AAC072A7B3C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula 5 - DLL", "Aula 5 - DLL\Aula 5 - DLL.csproj", "{DFE8CF8E-22ED-4303-A90C-AAC072A7B3C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula 6 - Pilares", "Aula 6 - Pilares\Aula 6 - Pilares.csproj", "{14BB8147-D814-46A1-9F33-C9C5EF15853D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{DFE8CF8E-22ED-4303-A90C-AAC072A7B3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFE8CF8E-22ED-4303-A90C-AAC072A7B3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFE8CF8E-22ED-4303-A90C-AAC072A7B3C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BB8147-D814-46A1-9F33-C9C5EF15853D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BB8147-D814-46A1-9F33-C9C5EF15853D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BB8147-D814-46A1-9F33-C9C5EF15853D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BB8147-D814-46A1-9F33-C9C5EF15853D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,9 @@
 *	</copyright>
 * 	<author>lufer</author>
 *   <date>9/29/2021 9:14:52 PM</date>
-*	<description></description>
+*	<description>
+*	Métodos Static
+*	</description>
 **/
 using System;
 
