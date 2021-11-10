@@ -6,10 +6,4 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="TesteDLL">
-      <HintPath>..\..\LP2-ESI\Aulas\TesteDLL\bin\Debug\TesteDLL.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
