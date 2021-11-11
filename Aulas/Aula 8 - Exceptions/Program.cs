@@ -11,12 +11,63 @@ namespace Exceptions
         static void Main(string[] args)
         {
             int x;
+            int[] valores = new int[10];
 
             x = 10;
+            bool ok = false;
+
+
+            try
+            {
+                double propina = 23.5;
+                if (propina < 30)
+                {
+                    throw new AlunoNaoPagaPropinasException("Tem de pagar...");
+                }
+            }
+            catch (AlunoNaoPagaPropinasException p)
+            {
+                Console.WriteLine(p.Message + " Então pague...");
+            }
+
+            Console.ReadKey();
+
+            //Analisar Tipo de excepções
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Valor: ");
+                    int xx = int.Parse(Console.ReadLine());
+
+                    xx = valores[x];
+                    ok = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Erro..." + e.Message);
+
+                }
+                catch (IndexOutOfRangeException e)
+                {
+                    Console.WriteLine("Erro..." + e.Message);
+                    ok = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Erro..." + e.Message);
+                }
+            }
+            while (ok != true);
+
 
             try
             {
                 bool aux = TrataDados();
+                //int k = int.Parse("ola mundo");
+                //DateTime d = DateTime.Parse("120-12-2012");
+                //throw new DataInvalidaException("TESTE", new Exception("TESTE"));
+                throw new AlunoNaoPagaPropinasException("TESTE", new Exception("TESTE"));
             }
             catch (MyException m)
             {
@@ -24,7 +75,11 @@ namespace Exceptions
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Main Formato: " + e.Message + " ...Contacte o seu admin");
+                //Console.WriteLine("Main Formato: " + e.Message + " ...Contacte o seu admin");
+            }
+            catch(AlunoNaoPagaPropinasException e)
+            {
+                Console.WriteLine("Message Final: " + e.Message);
             }
             catch (Exception e)
             {
@@ -33,7 +88,6 @@ namespace Exceptions
             Console.ReadKey();
 
         }
-
 
         static bool TrataDados()
         {
