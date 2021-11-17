@@ -8,7 +8,9 @@ using System.Collections;
 
 namespace MyCollections
 {
-
+    /// <summary>
+    /// Usa Hashtable
+    /// </summary>
     class GerePessoas
     {
         private Hashtable h;

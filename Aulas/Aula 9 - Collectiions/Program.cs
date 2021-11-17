@@ -2,7 +2,8 @@
  * by lufer
  * Array
  * ArrayList
- * Etc.
+ * https://docs.microsoft.com/en-us/dotnet/api/system.collections?view=net-5.0
+ * 
  * Ordenar MyCollections
  *  1º Criar Classe X:IComparer
  *  2º Criar método Compare com return (1,-1 ou 0)
@@ -11,11 +12,12 @@
  *  
  * URL: 
  * http://www.java2s.com/Tutorial/CSharp/CatalogCSharp.htm
- * http://www.tutorialsteacher.com/csharp/csharp-queue
+ * https://www.tutorialsteacher.com/csharp/csharp-collection
  * */
 using System;
 
 using System.Collections;
+using System.Collections.Generic;
 
 namespace MyCollections
 {
@@ -51,20 +53,29 @@ namespace MyCollections
 
             #region ArrayList
 
-            ArrayList aux = new ArrayList();
+
             string[] nomes = new string[] { "ola", "ole" };
+
+            //Cria e inicializa copiando valores de array
+            ArrayList textos = new ArrayList(nomes);
+
+            //Generic
+            Dictionary<int,List<Pessoa>> aaa = new Dictionary<int,List<Pessoa>>();
+
+            ArrayList aux = new ArrayList();
             aux.Add("luis");
             aux.Add("luis");
             aux.Add(12);
             aux.Add(nomes);
-            //aux.AddRange(nomes);//adiciona elementos no final do ArrayList
+            aux.AddRange(nomes);//adiciona elementos no final do ArrayList
             aux.Add("benfica");
             aux.Add(p2);
             aux.Add(p1);
 
             Console.WriteLine("Size= " + aux.Count);
-            aux.Remove(p1);
+
             Console.WriteLine("Index: " + aux.IndexOf(p1).ToString());
+            aux.Remove(p1);
             Console.WriteLine("Existe Benfica: " + aux.Contains("benfica"));
 
             //mostrar arrayList
@@ -128,7 +139,7 @@ namespace MyCollections
                 Console.WriteLine(obj);
             //Adjust queue size...Trim the Queue  
             q.TrimToSize();
-            
+
             //More...
             ShowII(q, '\n');
             Console.WriteLine("(Peek)   \t{0}", q.Peek());
@@ -200,7 +211,7 @@ namespace MyCollections
 
             Console.ReadKey();
             //n.Sort();                // Porque falha? 
-            n.Sort(new MyComparer(SortDirecc.Desc));
+            n.Sort(new MyComparer());
 
             Console.WriteLine("Depois de Ordenar");
             Show(n);
@@ -213,7 +224,7 @@ namespace MyCollections
             aux.Add(new Carro("18"));
             aux.Sort();
 
-             Console.ReadKey();
+            Console.ReadKey();
             //#endregion
 
             #endregion
@@ -229,7 +240,7 @@ namespace MyCollections
             m.MyArr.Add(p2);
             m.MyArr.Add(p1);        //A Capacidade (capacity) duplica sempre que se esgota a reservada inicialmente
             m.Insert(p1);           //correct!!!
-            
+
 
             m.MyArr.Insert(0, p3);  //Insere na posição 0...shift rigth das existentes
             m.MyArr.Remove(p1);
@@ -239,7 +250,7 @@ namespace MyCollections
             //Antes de ordenar
             m.ShowCollection();
 
-           
+
             m.MyArr.Sort(new MyComparer());             //para ordenar é necessário um "IComparer
             //depois de ordenar
             m.ShowCollection();
@@ -253,6 +264,58 @@ namespace MyCollections
             Console.WriteLine(m.ShowCollectionAdvanced().ToString());
             #endregion
 
+            #region SortedList
+
+            Console.WriteLine("\nSortedList\n");
+            SortedList sl = new SortedList();
+
+            sl.Add(1, "Benfica");
+            sl.Add(3, "Porto");
+            sl.Add(4, "Braguinha");
+            sl.Add(2, "Sporting");
+
+            Console.WriteLine("Número de Elementos : {0}", sl.Count);
+            if (sl.ContainsValue("Benfica"))
+                Console.WriteLine("Benfica é o maior");
+            else
+                sl.Add(1, "Benfica");
+            Console.WriteLine("Valor e chave na posição 3 = {0} , {1}", sl.GetByIndex(3), sl.GetKey(3));
+
+            //Percorre a SortedList...mostra todas as chaves
+            Console.Write("Chaves: Valores");
+            foreach (int i in sl.Keys)
+                Console.WriteLine("Key: " + i + " - Valor: " + sl[i]);
+            
+
+            //Agrupa pares (k,v)  
+            IList keys1 = sl.GetKeyList();
+            IList values1 = sl.GetValueList();
+            Console.WriteLine("\nValores :");
+            foreach (object obj in values1)
+                Console.WriteLine(obj);
+            //Or
+            Console.WriteLine("\nChaves: Valores :");
+            foreach (object obj in keys1)
+                Console.WriteLine("Chave: " + obj + " Valor: " + sl[obj]);
+
+            Console.WriteLine("Index do Porto é : {0}", sl.IndexOfValue("Porto"));
+
+            //Mostra todos os pares (k,v)
+
+            foreach (object obj in keys1)
+                Console.WriteLine("Key: {0} - Valor: {1}\n", obj, sl[obj]);
+
+
+            //Remover
+            //remove elemento com chave 3
+            sl.Remove(3);   
+            // Remove um elemento num determinado index
+            sl.RemoveAt(2); //?
+
+            Console.ReadKey();
+
+            #endregion
+
             #region Hashtable I
 
             Hashtable ht = new Hashtable();
@@ -260,12 +323,14 @@ namespace MyCollections
             //Hashtable ht = new Hashtable() { { 1, 2 }, { 2, "ok" }, { "3", new Carro("12") } };
 
             //Adding item into HashTable  
-            ht.Add(1, "Benfica");
+            ht.Add(1, p1);
             ht.Add(7, "Benfica");
             //ht.Add(1, "Porto");           //Erro: Porquê?
             ht.Add(12, "Porto");
             ht.Add(8, "Braga");
             ht.Add(4, "Outro");
+
+            
             //
             Console.WriteLine("Count : {0}", ht.Count);
             if (ht.ContainsValue("Benfica"))
@@ -283,11 +348,14 @@ namespace MyCollections
             Console.WriteLine("Chaves:");
             ICollection keys = ht.Keys;
             foreach (int k in keys)
-                Console.WriteLine("Key: " + k + " Value: " + ht[k]); ;
+                Console.WriteLine("Key: " + k + " Value: " + ht[k]);
+
+            //Apaga par (Chave/Valor)
             ht.Remove(3);
+            //Elimina hash
             ht.Clear();
 
-            // Put keys in an ArrayList.
+            // Cria ArrayList com as chaves.
             ArrayList arrayList = new ArrayList(ht.Keys);
             foreach (int key in arrayList)
             {
@@ -322,92 +390,9 @@ namespace MyCollections
 
             #endregion            
 
-            #region Arrays
-
-            Array a = Array.CreateInstance(typeof(string), 20);
-
-            a.SetValue("Benfica", 0);
-            a.SetValue("Porto", 1);
-
-            string s1 = (string)a.GetValue(0);
-
-            #endregion
-
-            #region SortedList
-
-            Console.WriteLine("\nSortedList\n");
-            SortedList sl = new SortedList();
-            
-            sl.Add(1, "Benfica");
-            sl.Add(3, "Porto");
-            sl.Add(4, "Braguinha");
-            sl.Add(2, "Sporting");
-
-            Console.WriteLine("Número de Elementos : {0}", sl.Count);
-            if (sl.ContainsValue("Benfica"))
-                Console.WriteLine("Benfica é o maior");
-            else
-                sl.Add(1, "Benfica");
-            Console.WriteLine("Valor e chave na posição 3 = {0} , {1}", sl.GetByIndex(3), sl.GetKey(3));
-
-            //Percorre a SortedList...mostra todas as chaves
-            Console.Write("Chaves: ");
-            foreach (int i in sl.Keys)
-                Console.Write(i + " ");
-            
-
-            //Agrupa pares (k,v)  
-            IList keys1 = sl.GetKeyList();
-            IList values1 = sl.GetValueList();
-            Console.WriteLine("\nValores :");
-            foreach (object obj in values1)
-                Console.WriteLine(obj);
-            //Or
-            Console.WriteLine("\nChaves: Valores :");
-            foreach (object obj in keys1)
-                Console.WriteLine("Chave: " + obj + " Valor: " + sl[obj]);
-
-            Console.WriteLine("Index do Porto é : {0}", sl.IndexOfValue("Porto"));
-
-            //Mostra todos os pares (k,v)
-
-            foreach (object obj in keys1)
-                Console.WriteLine("Key: {0} - Valor: {1}\n", obj, sl[obj]);
-
-
-            //Remover
-            //remove elemento com chave 3
-            sl.Remove(3);   
-            // Remove um elemento num determinado index
-            sl.RemoveAt(2); //?
-
-            Console.ReadKey();
-
-            #endregion
-
-            #region Carros
-
-            ArrayList carros= new ArrayList();
-
-            carros.Add(new Carro("19-12-12"));
-            carros.Add(new Carro("12-12-13"));
-            carros.Add(new Carro("13-12-12"));
-
-            foreach(Carro c in carros)
-            {
-                Console.WriteLine("Mat= " + c.matricula);
-            }
-
-            carros.Sort(new MyComparer());
-
-            foreach (Carro c in carros)
-            {
-                Console.WriteLine("Mat= " + c.matricula);
-            }
-
-            #endregion
-
             #region HasTableIII
+
+            //Hastable: Revisões
 
             GerePessoas hp = new GerePessoas();
             Pessoa y = new Pessoa();
@@ -428,13 +413,40 @@ namespace MyCollections
 
             #endregion
 
-            MyArrayList xx = new MyArrayList();
-            bool xxx = xx.Insert(new Pessoa());
+            #region Arrays
 
-            
-            //pessoas.Add(new Pessoa());
-            //GereArrayList.Insert(pessoas, new Pessoa());
+            Array a = Array.CreateInstance(typeof(string), 20);
 
+            a.SetValue("Benfica", 0);
+            a.SetValue("Porto", 1);
+
+            string s1 = (string)a.GetValue(0);
+
+            #endregion
+
+            #region Carros
+
+            //ArrayList: Revisões
+
+            ArrayList carros = new ArrayList();
+
+            carros.Add(new Carro("19-12-12"));
+            carros.Add(new Carro("12-12-13"));
+            carros.Add(new Carro("13-12-12"));
+
+            foreach (Carro c in carros)
+            {
+                Console.WriteLine("Mat= " + c.matricula);
+            }
+
+            carros.Sort(new MyComparer());
+
+            foreach (Carro c in carros)
+            {
+                Console.WriteLine("Mat= " + c.matricula);
+            }
+
+            #endregion
         }
 
         /// <summary>

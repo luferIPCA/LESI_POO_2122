@@ -36,13 +36,85 @@ namespace MyCollections
     /// </summary>
     internal class MyComparer : IComparer
     {
+        public MyComparer()
+        {
+           
+        }
+        /// <summary>
+        /// Comparador: IComparer.Compare...só para inteiros!
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        //public int Compare(object x, object y)
+        //{
+        //    int a = (int)x;
+        //    int b = (int)y;
+        //    return (a > b ? 1 : (a == b ? 0 : -1));
+
+        //}
+
+        /// <summary>
+        /// 0 - iguais
+        /// 1 - x>y
+        /// -1 - x<y
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int Compare(object x, object y)
+        {
+            //Se algum é null
+            if (object.ReferenceEquals(x, null) || object.ReferenceEquals(y, null))
+                return 0;
+            if (x.GetType() == typeof(int) && y.GetType() == typeof(int))       //int
+            {
+                int a = (int)x;
+                int b = (int)y;
+                return (a > b ? 1 : (a == b ? 0 : -1));
+            }
+
+            if (x.GetType() == typeof(Pessoa) && y.GetType() == typeof(Pessoa))  //struct or classe
+            {
+                //assumi comparar só as idades
+                int i1 = ((Pessoa)x).idade;
+                int i2 = ((Pessoa)y).idade;
+                return (i1 > i2 ? 1 : (i1 == i2 ? 0 : -1));
+            }
+
+            if (x.GetType() == typeof(string) && y.GetType() == typeof(string))  //string
+            {
+                //((String)y).CompareTo("ola");
+                return (String.Compare((String)x, (String)y));
+            }
+
+            if (x.GetType() == typeof(Carro) && y.GetType() == typeof(Carro))  //string
+            {
+                Carro aux1 = (Carro)x;
+                Carro aux2 = (Carro)y;
+
+                return (String.Compare(aux1.matricula, aux2.matricula));
+            }
+
+            return -1;
+        }
+
+
+    }
+
+
+    /// <summary>
+    /// Comparar com indicação de Ascendente ou Descendente
+    /// </summary>
+    internal class MyComparerAscDes : IComparer
+    {
         private SortDirecc dir;        //Asc, Desc
 
-        public MyComparer()
+        public MyComparerAscDes()
         {
             dir = SortDirecc.Asc;
         }
-        public MyComparer(SortDirecc dir)
+        public MyComparerAscDes(SortDirecc dir)
         {
             this.dir = dir;
         }
@@ -128,5 +200,4 @@ namespace MyCollections
 
 
     }
-
 }

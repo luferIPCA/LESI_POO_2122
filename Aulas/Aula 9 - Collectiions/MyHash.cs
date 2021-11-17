@@ -18,7 +18,7 @@ using System.Text;
 namespace MyCollections
 {
     /// <summary>
-    /// Gerir uma HashTable
+    /// Gerir uma HashTable com possibilidade de colisoes
     /// </summary>
     class MyHashTable
     {
@@ -86,6 +86,7 @@ namespace MyCollections
             }
             else
             {
+                // 42
                 int key = MyGetHashCode(((Pessoa)o).nome, HASHSIZE);  //descobre a hask key
 
                 if (!myHash.ContainsKey(key))
